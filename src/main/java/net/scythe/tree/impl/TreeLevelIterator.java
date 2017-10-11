@@ -4,6 +4,8 @@ import net.scythe.tree.TreeNode;
 import org.apache.commons.collections.CollectionUtils;
 
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -11,23 +13,23 @@ import java.util.Stack;
  */
 public class TreeLevelIterator<T> implements Iterator<TreeNode<T>> {
 
-    private Stack<TreeNode<T>> stack;
+    private Queue<TreeNode<T>> queue;
 
     public TreeLevelIterator(TreeNode<T> treeNode) {
-        stack = new Stack<>();
-        stack.add(treeNode);
+        queue = new LinkedList<>();
+        queue.add(treeNode);
     }
 
     @Override
     public boolean hasNext() {
-        return !stack.isEmpty();
+        return !queue.isEmpty();
     }
 
     @Override
     public TreeNode<T> next() {
-        TreeNode<T> node = stack.pop();
+        TreeNode<T> node = queue.poll();
         if (CollectionUtils.isNotEmpty(node.getChildren())) {
-            stack.addAll(node.getChildren());
+            queue.addAll(node.getChildren());
         }
         return node;
     }
