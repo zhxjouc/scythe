@@ -6,11 +6,7 @@ import org.apache.commons.collections.CollectionUtils;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
-/**
- * Created by xinjian on 9/28/17.
- */
 public class TreeLevelIterator<T> implements Iterator<TreeNode<T>> {
 
     private Queue<TreeNode<T>> queue;

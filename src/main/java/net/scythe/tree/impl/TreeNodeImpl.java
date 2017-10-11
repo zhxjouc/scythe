@@ -8,9 +8,6 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-/**
- * Created by xinjian on 9/28/17.
- */
 public class TreeNodeImpl<T> implements TreeNode<T> {
 
     private T data;

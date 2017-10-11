@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-/**
- * Created by xinjian on 9/28/17.
- */
 public interface TreeNode<T> extends Iterable<TreeNode<T>> {
 
     TreeNode getChildAt(int childIndex);
